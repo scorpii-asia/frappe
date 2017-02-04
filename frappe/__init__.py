@@ -1187,21 +1187,25 @@ def get_print(doctype=None, name=None, print_format=None, style=None, html=None,
 	:param as_pdf: Return as PDF. Default False."""
 	from frappe.website.render import build_page
 	from frappe.utils.pdf import get_pdf
-
+	
 	local.form_dict.doctype = doctype
 	local.form_dict.name = name
 	local.form_dict.format = print_format
 	local.form_dict.style = style
 	local.form_dict.doc = doc
-
+	
+	doc = get_doc(doctype,name)
+	
 	if not html:
 		html = build_page("print")
 
 	if as_pdf:
-		# orientation = "Potrait"
-		# if doc.orientation:
-			# orientation = doc.orientation
-		return get_pdf(html,options= {"orientation": "Landscape"}, output = output)
+		orientation = "Portrait"
+		if doc:
+			if hasattr(doc, 'orientation'):
+				orientation = doc.orientation
+		# logger().debug('inside get_print ' + doc.orientation)
+		return get_pdf(html,options= {"orientation": orientation}, output = output)
 	else:
 		return html
 
