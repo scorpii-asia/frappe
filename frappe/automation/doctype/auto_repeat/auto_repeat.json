@@ -18,6 +18,7 @@
   "start_date",
   "end_date",
   "section_break_10",
+  "contract_type",
   "frequency",
   "repeat_on_day",
   "repeat_on_last_day",
@@ -208,10 +209,19 @@
    "depends_on": "eval:doc.frequency==='Weekly';",
    "fieldname": "section_break_16",
    "fieldtype": "Section Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "contract_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Contract Type",
+   "options": "\nIT Contract - Postpaid\nIT Contract - Prepaid\nDomain + Hosting\nEmail - Office365\nEmail - Cpanel Hosting"
   }
  ],
  "links": [],
- "modified": "2021-01-12 09:24:49.719611",
+ "modified": "2022-06-01 22:18:24.516495",
  "modified_by": "Administrator",
  "module": "Automation",
  "name": "Auto Repeat",

@@ -75,7 +75,7 @@ window.comment_when = function(datetime, mini) {
 	return '<span class="frappe-timestamp '
 		+ (mini ? " mini" : "") + '" data-timestamp="' + datetime
 		+ '" title="' + timestamp + '">'
-		+ prettyDate(datetime, mini) + '</span>';
+		+ prettyDate(datetime, mini) + ' - ' + moment(datetime).format('YYYY-MM-DD HH:mm') + '</span>';
 };
 frappe.datetime.comment_when = comment_when;
 frappe.datetime.prettyDate = prettyDate;
@@ -83,7 +83,8 @@ frappe.datetime.prettyDate = prettyDate;
 frappe.datetime.refresh_when = function() {
 	if (jQuery) {
 		$(".frappe-timestamp").each(function() {
-			$(this).html(prettyDate($(this).attr("data-timestamp"), $(this).hasClass("mini")));
+					$(this).html(prettyDate($(this).attr("data-timestamp"), $(this).hasClass("mini")) + ' - ' + moment($(this).attr("data-timestamp")).format('YYYY-MM-DD HH:mm'));
+
 		});
 	}
 };

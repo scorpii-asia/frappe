@@ -10,6 +10,7 @@
  "hide_custom": 0,
  "icon": "setting",
  "idx": 0,
+ "is_default": 0,
  "is_standard": 1,
  "label": "Settings",
  "links": [
@@ -113,6 +114,15 @@
    "is_query_report": 0,
    "label": "Email Template",
    "link_to": "Email Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Auto Repeat",
+   "link_to": "Auto Repeat",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -336,8 +346,8 @@
    "type": "Link"
   }
  ],
- "modified": "2020-12-01 13:38:40.235323",
- "modified_by": "Administrator",
+ "modified": "2021-11-03 23:01:22.593246",
+ "modified_by": "ben.chua@3verhigher.com",
  "module": "Core",
  "name": "Settings",
  "owner": "Administrator",
